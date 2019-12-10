@@ -1,0 +1,57 @@
+@model RoletopMVC.ViewModel.PedidoViewModel
+<main>
+    
+    <div class="espaco"></div>
+    <h2>Cadastro do Evento</h2>
+    <form id="box-CaixaEvento" method="POST" action='@Url.Action("Registrar", "CadastroEvento")'>
+        <div>
+            <label for="nome_evento">Nome do Evento</label>
+            <br />
+            <input id="nome_evento" type="text" maxlength="20" minlength="3" name="nome_evento" />
+        </div>
+
+        <div>
+            <label for="email">E-mail</label>
+            <br />
+            <input id="email" type="email" value="@Model.Cliente.Email" name="email" />
+        </div>
+
+        <div>
+            <label for="eventos">Tipo de Evento</label>
+            <div class="field">
+                <div>
+                    <select id="eventos" name="eventos" required>
+                    <option value=""disabled selected>Selecione</option>
+
+                    @foreach(var evento in @Model.Eventos)
+                    {
+                        <option value=@evento.NomeEvento>@evento.NomeEvento por R$@evento.Preco,00 </option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div>
+        <label for="planos">Planos</label>
+            <div class="field">
+                <div>
+                    <select id="planos" name="planos" required>
+                    <option value="" disabled selected>Selecione</option>
+
+                    @foreach (var produto in Model.Produtos)
+                    {
+                        <option value=@produto.Nome>@produto.Nome por R$@produto.Preco,00 </option> 
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <label for="telefone">Telefone</label>
+            <br />
+            <input id="telefone" type="text" value="@Model.Cliente.Telefone" name="telefone" />
+            
+            <input class="center" type="submit" value="Confirmar Evento">
+        </form>
+        </div>
+</main>

@@ -1,0 +1,253 @@
+@font-face {
+  font-family: 'Roletop';
+  src: url('../fonts/bayoc___-webfont.woff2') format('woff2'),
+       url('../fonts/bayoc___-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+  *{
+      margin: 0;
+      padding:0;
+      
+  }
+  body{
+    background-color: #6d086d;
+  }
+  
+    #Logo > img{
+      widows: 150px;
+      padding-right:.60em;
+      padding-left: 1em;
+      height: 4em;
+
+
+    }
+
+    #Logo{ 
+      padding-right:.60em;
+      padding-left: 1em;
+      padding-top: 1em;
+
+
+    }
+    
+
+    nav {
+      background-color:#FFC600 ;
+      position: fixed;
+      width: 100%;
+  }
+  
+  nav ul li:nth-child(2){
+      padding-left: 1em;  
+  }
+  
+  
+  nav ul{
+      display:flex;
+      list-style-type: none;
+      align-items: center;
+      font-size: 1.5em;
+      height: 4em;
+      
+    
+      
+  }
+  nav a{
+    color: #7D0093;
+    text-decoration: none;
+    
+
+    }
+
+  nav a:hover{
+    color: #7D0093;
+   
+
+  }
+  
+  nav li {
+      text-decoration: none;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      padding: .60em 1em;
+      justify-content: space-between;
+      color: #7D0093;
+  
+  }
+
+  nav  li:hover:first-child {
+      border-bottom: 0px solid purple;
+  }
+
+  nav  li:hover{
+    border-bottom: 3px solid #7D0093;
+  }
+
+  footer{
+  
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #FFC600;
+    font-size: 1.5em;
+    display:flex;
+    justify-content:center;
+    align-items: flex-end;
+    color: #7D0093;
+    bottom:0;
+    width:100%;
+  }
+
+  #banner {
+  background-image: url("../img/bannerzada.png");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  height: 20em;
+  width: 100%;
+  }
+
+  h1{
+    background-color: #FFC600;
+    color: #7D0093;
+    font-family: "Roletop"; 
+    font-size: 1.5em;
+    padding: 1% 3%;
+    font-size: 2em;
+    justify-content: center;
+    margin: 0 auto;
+    display:flex; 
+  }
+  h2{
+    background-color: rgb(240, 188, 0);
+      color: #7D0093;
+      font-family: "Roletop";
+      padding: 1% 3%;
+      font-size: 2em;
+      justify-content: center;
+      margin: 0 auto;
+      display:flex; 
+  }
+
+  main {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFC600;
+  
+  }
+  main > p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-right: 10%;
+    margin-left:10%;
+    font-size: 1.3em;
+  }
+
+  .grupo-flex{
+    display:flex;
+    color:black;
+  }
+
+  .flex{
+    display:flex;
+  }
+
+  .noticia{
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+  }
+  .noticia > img{
+    margin: auto;
+    flex-direction: row;
+    
+    
+  }
+  
+  
+  #navmobile{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    display: none;
+    
+  }
+  
+  .navcolmobile{
+    display:flex;
+    width: 100%;
+    flex-direction: column;
+    font-size: 1.3em;
+    color: #7D0093;
+    font-size: 2em;
+        
+        
+      }
+      .local > div {
+      height: 300px;  
+      width: 100%;
+      margin: 0 auto;
+      
+      }
+      .local{
+        height: 100%;
+        width: 100%;
+      }
+    
+    
+      iframe {
+        text-align: center;
+      }
+      
+      .navcolmobile > a:first-child{
+        height: 1em;
+        width: 1em;
+        
+      }
+      .navrowmobile{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        border: 1px solid #7D0093;
+        
+      }
+
+      .navrowmobile > a{
+        padding: 1em;
+      }
+      
+      
+      .navrowmobile > h1{
+        margin: 0 auto;
+        font-size: 1.3em;
+        justify-content: center;
+        
+      }
+      .navrowmobile a:hover{
+        color: rgb(64, 1, 75);
+        
+  }
+  @media (max-width: 600px) {
+    .grupo-flex .noticia {
+        widows: 100%;
+        
+    }
+  }
+
+  @media(max-width: 600px){
+    #navweb{
+      display: none;
+    
+    }
+
+    #navmobile{
+      display:block;
+    }
+
+    .display{
+      display: block;
+    } 
+
+    .hide{
+      display:none;
+    }
+
+    
+    .inline{
+      display: inline;
+    }
+}

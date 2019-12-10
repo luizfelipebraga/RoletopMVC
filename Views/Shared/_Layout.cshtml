@@ -1,0 +1,155 @@
+﻿@model RoletopMVC.ViewModel.BaseViewModel
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Rolêtop</title>
+        
+        <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
+
+        <link href="img/logo roletop.png" rel="icon" type="image/x-icon"/>
+        @if("Home".Equals(@Model.NomeView))
+        {
+                <link href="~/css/roletop.css" rel="stylesheet">
+
+        }else if("Login".Equals(@Model.NomeView))
+        {
+                <link href="~/css/Login.css" rel="stylesheet">
+
+        }else if("Galeria".Equals(@Model.NomeView))
+        {
+                <link href="~/css/Galeria de Fotos.css" rel="stylesheet">
+
+        }else if("CadastroCliente".Equals(@Model.NomeView))
+        {
+                <link href="~/css/Cadastro do Cliente.css" rel="stylesheet">
+
+        }else if("CadastroEvento".Equals(@Model.NomeView))
+        {
+                <link href="~/css/Cadastro do Evento.css" rel="stylesheet">
+
+        }else if("Administrador".Equals(@Model.NomeView))
+        {
+                <link href="~/css/Agendamento.css" rel="stylesheet">
+
+        }else if("Contato".Equals(@Model.NomeView))
+        {
+                <link href="~/css/Contato.css" rel="stylesheet">
+        }else if("Historico".Equals(Model.NomeView))
+        {
+                <link href="~/css/Historico.css" rel="stylesheet">
+        }else if("Erro".Equals(@Model.NomeView))
+        {
+                <link href="~/css/Sucesso-Erro.css" rel="stylesheet">
+        }else if("Sucesso".Equals(@Model.NomeView))
+        {
+                <link href="~/css/Sucesso-Erro.css" rel="stylesheet">
+        }
+
+
+
+</head>
+<html>
+<body class = "flex-container">
+        <header style="background-color: #FFC600">
+        <nav>
+        <div id= "navweb">
+                        
+                        <ul>
+                                <li id="Logo"><img href="Home.html" src="~/img/logo roletop.png" alt="roletop"></li>
+                                <li><a asp-controller="Home" asp-action="index">Home</a></li>
+                                <li><a asp-controller="Galeria" asp-action="index">Galeria de fotos</a></li>
+                                <li><a asp-controller="CadastroCliente" asp-action="index">Cadastro do Cliente</a></li>
+                                @if(string.IsNullOrEmpty(@Model.UsuarioEmail))
+                                {
+                                <li><a asp-controller="Cliente"asp-action="index">Login do Cliente</a></li>
+                                }
+
+                                else
+                                {
+                                        <li><a asp-controller="Cliente"asp-action="Logoff">Logoff</a></li>
+                                        <li><a asp-controller="Cliente"asp-action="Historico">Pedidos</a></li>
+                                }
+
+                                <li><a asp-controller="CadastroEvento" asp-action="index">Cadastro do Evento</a></li>
+                                <li><a asp-controller="Contato" asp-action="index">Contato</a></li>
+                        </ul>    
+        </div>
+                <div id="navmobile">
+                        
+                        <div class="navcolmobile">
+                                <div class= "navrowmobile barra-mobile"> 
+                                        
+                                        <a href="#" id="hamburguer-icon">
+                                                <i class="fa fa-bars"></i>
+                                        </a>
+
+                                        <h1 style="color:#7D0093">Rolê top</h1>  
+                        </div>
+                                <div class = "hide" id="links">
+
+                                        <div class="navrowmobile">
+                                                <a asp-controller="Home" asp-action="index">Home</a>
+                                                        <br>
+                                        </div>
+                                                        
+                                        <div class="navrowmobile">
+                                                <a asp-controller="Galeria" asp-action="index">Galeria de fotos</a>
+                                        </div>
+                                        
+                                        <div class="navrowmobile">
+                                                <a asp-controller="CadastroCliente" asp-action="index">Cadastro do Cliente</a> 
+                                        </div>
+                                        
+                                        <div class="navrowmobile">
+                                                <a asp-controller="Cliente" asp-action="index">Login do Cliente</a> 
+                                        </div>
+                                        
+                                        
+                                        <div class="navrowmobile">
+                                                <a asp-controller="CadastroEvento" asp-action="index">Cadastro do Evento</a>
+                                        </div>
+                                        
+                                        
+                                        <div class="navrowmobile">
+                                                <a asp-controller="Dashboard" asp-action="index">Dashboard</a>
+                                        </div>
+                                        
+                                        <div class="navrowmobile">
+                                                <a asp-controler="Contato" asp-action="index">Contato</a>
+                                        </div>
+                                </div>      
+                                </div>
+                        </div>
+                </div> 
+        </nav>
+</header>
+
+@RenderBody()
+
+<footer>
+                
+        Rua Alameda Barão de Limeira, 539
+</footer>
+
+<script>
+        var  botaoHamburguer = document.getElementById("hamburguer-icon");
+        var links = document.getElementById("links");
+
+        botaoHamburguer.addEventListener("click", function() {
+
+if (links.classList.contains("hide")){
+        links.classList.add("display");
+        links.classList.remove("hide")
+                } else {
+                links.classList.remove("display")
+                links.classList.add("hide")
+                }
+        }
+)
+        </script>
+</body>
+</html>

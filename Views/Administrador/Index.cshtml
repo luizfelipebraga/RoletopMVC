@@ -1,0 +1,95 @@
+@model RoletopMVC.ViewModel.DashboardViewModel
+@using RoletopMVC.Enums
+    <main>
+        <div class="espaco"></div>
+        <h2>Dashboard</h2>
+        <section id="status-pedidos">
+            <h3>Status dos pedidos</h3>
+            <div id="painel">
+                <div class="box-status-pedidos aprovados">
+                    <h4>Aprovados</h4>
+                    <p>@Model.PedidosAprovados</p>
+                </div>
+                <div class="box-status-pedidos pendentes">
+                    <h4>Pendentes</h4>
+                    <p>@Model.PedidosPendentes</p>
+                </div>
+                <div class="box-status-pedidos reprovados">
+                    <h4>Reprovados</h4>
+                    <p>@Model.PedidosReprovados</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="lista-pedidos">
+            <h3>Lista de pedidos</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2">Nome do Evento</th>
+                        <th rowspan="2">Tipo de Evento</th>
+                        <th rowspan="2">Planos</th>
+                        <th rowspan="2">Situação</th>
+                        <th rowspan="2">PrecoTotal</th>
+
+                        <th colspan="2" rowspan="2">Aprovar</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="7">
+                            <p>Pedidos atualizados em @DateTime.Now</p>
+                        </td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach(var pedido in Model.Pedidos )
+                    {
+                        <tr>
+                            <td>@pedido.NomeEvento</td>
+                            <td>@pedido.Eventos</td>
+                            <td>@pedido.Planos</td>
+                            @{
+
+                            switch (pedido.Status)
+                            {
+                                case (uint) StatusPedido.APROVADO:
+                                <td class="aprovado">
+                                    <p>Aprovado</p>
+                                </td>
+                                break;
+
+                                case (uint) StatusPedido.REPROVADO:
+                                <td class="reprovado">
+                                    <p>Reprovado</p>
+                                </td>
+                                break;
+
+                                case (uint) StatusPedido.PENDENTE:
+                                <td class="pendente">
+                                    <p>Pendente</p>
+                                </td>
+                                break;
+                            
+                            }
+                        }
+                            <td>R$@pedido.PrecoTotal,00</td>
+                                
+                            <div class="green">
+                            <td><a href='@Url.Action("Aprovar", "CadastroEvento", new {id = @pedido.Id})'><i class="fas fa-check"></i></a></td>
+                            </div>
+                            
+                            <div class="red">
+                            <td><a href='@Url.Action("Reprovar", "CadastroEvento", new {id = @pedido.Id})'><i class="fas fa-times"></i></a></td>
+                            </div>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+
+    </main>

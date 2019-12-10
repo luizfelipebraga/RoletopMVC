@@ -1,0 +1,20 @@
+<main>
+    <div class="espaco"></div>
+    <h2 >Contato</h2>
+    <form method="POST" action='@Url.Action("Mensagem", "Contato")'>>
+        <div>
+            <label for="email">E-mail</label>
+                <br />
+                <input id="email" type="email" name="email" />
+        </div>
+
+        <div>
+            <label for="mensagem">Mensagem</label>
+            <br />
+            <input id="mensagem" type="text" maxlength="20" minlength="3" name="mensagem" />
+        </div>
+        
+        <input class= "center" type="submit" value="Enviar">
+        
+    </form>
+    </main>

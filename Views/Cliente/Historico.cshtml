@@ -1,0 +1,78 @@
+@model RoletopMVC.ViewModel.HistoricoViewModel
+@using RoletopMVC.Enums
+
+@{
+    ViewData["Title"] = "Pedidos - Roletop";
+    ViewData["H2"] = "Histórico de Pedidos";
+}
+<header>
+    <hgroup>
+        
+    </hgroup>
+</header>
+
+<main>
+    <div class="espaco"></div>
+    <h2>@ViewData["H2"]</h2>
+
+    
+    <div class="caixa-pedido">
+    <table>
+        <thead>
+                <tr>
+                    <th>Nome do Evento   </th>
+                    <th>Tipo de Evento </th>
+                    <th>Planos  </th>
+                    <th>Situação </th>
+                    <th>PrecoTotal </th>
+                </tr>
+            </thead>
+            <tfoot>
+                    <tr>
+                        <td colspan="7">
+                            <p>Pedidos atualizados em @DateTime.Now</p>
+                        </td>
+                    </tr>
+                </tfoot>
+            <tbody>
+                @foreach( var pedido in Model.Pedidos ) {
+                    <tr>
+                        
+                        <td>@pedido.NomeEvento</td>
+                        <td>@pedido.Eventos</td>
+                        <td>@pedido.Planos</td>
+
+                        @{
+                            switch (pedido.Status)
+                            {
+                                case (uint) StatusPedido.APROVADO:
+                                <td style="color:rgb(3, 181, 3)">
+                                    <p>Aprovado</p>
+                                </td>
+                                break;
+
+                                case (uint) StatusPedido.REPROVADO:
+                                <td style="color:red">
+                                    <p>Reprovado</p>
+                                </td>
+                                break;
+
+                                case (uint) StatusPedido.PENDENTE:
+                                <td style="color:orange">
+                                    <p>Pendente</p>
+                                </td>
+                                break;
+                            
+                            }
+                        }
+
+                        <td>R$@pedido.PrecoTotal,00</td>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+</main>
