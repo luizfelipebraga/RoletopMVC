@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using RoletopMVC.Models;
 using RoletopMVC.Repositories;
 using RoletopMVC.ViewModel;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace RoletopMVC.Controllers
 {
@@ -36,6 +38,21 @@ namespace RoletopMVC.Controllers
                     return View("Erro", new RespostaViewModel($"Cadastro não efetuado, confira se preencheu os dados corretamente!"){NomeView="Erro",UsuarioEmail=GetUsuarioSession(),UsuarioNome=GetUsuarioNomeSession()});
                 } 
 
+        }
+
+        public static string AcertaSenha(string _login, string _senha)
+        {
+            StringBuilder senha = new StringBuilder();
+
+            MD5 md5 = MD5.Create();
+            byte[] entrada = Encoding.ASCII.GetBytes(_login + "//" + _senha);
+            byte[] hash = md5.ComputeHash(entrada);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+            senha.Append(hash[i].ToString("X2"));
+            }
+            return senha.ToString();
         }
     }
 }

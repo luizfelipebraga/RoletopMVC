@@ -128,8 +128,8 @@ h2{
 main {
   font-family: Arial, Helvetica, sans-serif;
   color: #FFC600;
- 
 }
+
 
 .espaco{
   height: 6em;
@@ -147,11 +147,21 @@ main > p {
   width: 100%;
   margin: 0 auto;
   
-  }
-  .local{
-    height: 100%;
-    width: 100%;
-  }
+}
+.local{
+  height: 100%;
+  width: 100%;
+}
+
+#container-eventos{
+}
+
+.div-select{
+  padding-left: 15em;
+  width:250px; 
+  padding-bottom: 1em;
+  overflow:hidden;
+}
 
 .grupo-flex{
   display:flex;

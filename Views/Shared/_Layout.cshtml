@@ -59,7 +59,7 @@
         <div id= "navweb">
                         
                         <ul>
-                                <li id="Logo"><img href="Home.html" src="~/img/logo roletop.png" alt="roletop"></li>
+                                <li id="Logo" asp-controller="Home" asp-action="index"><img  src="~/img/logo roletop.png" alt="roletop"></li>
                                 <li><a asp-controller="Home" asp-action="index">Home</a></li>
                                 <li><a asp-controller="Galeria" asp-action="index">Galeria de fotos</a></li>
                                 <li><a asp-controller="CadastroCliente" asp-action="index">Cadastro do Cliente</a></li>
@@ -113,13 +113,8 @@
                                                 <a asp-controller="CadastroEvento" asp-action="index">Cadastro do Evento</a>
                                         </div>
                                         
-                                        
                                         <div class="navrowmobile">
-                                                <a asp-controller="Dashboard" asp-action="index">Dashboard</a>
-                                        </div>
-                                        
-                                        <div class="navrowmobile">
-                                                <a asp-controler="Contato" asp-action="index">Contato</a>
+                                                <a asp-controller="Contato" asp-action="index">Contato</a>
                                         </div>
                                 </div>      
                                 </div>

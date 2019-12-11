@@ -126,11 +126,36 @@
       display:flex; 
   }
 
+  h3{
+    color: white;
+    margin-left: 5em;
+  }
+  
   main {
     font-family: Arial, Helvetica, sans-serif;
     color: #FFC600;
-  
+    
   }
+
+  .texto-comentario{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-right: 10%;
+    margin-left:10%;
+    font-size: 1.3em;
+  }
+
+  .foto-texto{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: flex;
+    padding-left: 10em;
+  }
+
+  main > h3{
+    color: white;
+  }
+
   main > p {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -142,6 +167,10 @@
   .grupo-flex{
     display:flex;
     color:black;
+  }
+
+  .espaco{
+    height: 6em;
   }
 
   .flex{
@@ -156,8 +185,7 @@
   .noticia > img{
     margin: auto;
     flex-direction: row;
-    
-    
+    background-color: #0e0305;
   }
   
   
