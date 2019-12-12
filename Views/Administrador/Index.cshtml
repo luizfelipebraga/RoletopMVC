@@ -29,6 +29,7 @@
                         <th rowspan="2">Nome do Evento</th>
                         <th rowspan="2">Tipo de Evento</th>
                         <th rowspan="2">Planos</th>
+                        <th rowspan="2">Data do Evento</th>
                         <th rowspan="2">Situação</th>
                         <th rowspan="2">PrecoTotal</th>
 
@@ -41,7 +42,7 @@
                 </thead>
                 <tfoot>
                     <tr>
-                        <td colspan="7">
+                        <td colspan="8">
                             <p>Pedidos atualizados em @DateTime.Now</p>
                         </td>
                     </tr>
@@ -53,6 +54,7 @@
                             <td>@pedido.NomeEvento</td>
                             <td>@pedido.Eventos</td>
                             <td>@pedido.Planos</td>
+                            <td>@pedido.DataEvento.ToLongDateString()</td>
                             @{
 
                             switch (pedido.Status)

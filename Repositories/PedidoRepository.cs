@@ -44,6 +44,7 @@ namespace RoletopMVC.Repositories
                 pedido.PrecoTotal = double.Parse(ExtrairValorDoCampo("preco_total",linha));
                 pedido.Id = ulong.Parse(ExtrairValorDoCampo("id_pedido",linha));
                 pedido.Status = uint.Parse(ExtrairValorDoCampo("status",linha));
+                pedido.DataEvento = DateTime.Parse(ExtrairValorDoCampo("dataevento",linha)); 
 
                 pedidos.Add(pedido);
             }
@@ -111,7 +112,7 @@ namespace RoletopMVC.Repositories
         {
 
             Cliente cliente = pedido.Cliente;
-            return $"cliente_nome={cliente.Nome};cliente_endereco={cliente.Endereco};cliente_telefone={cliente.Telefone};cliente_email={cliente.Email};eventos={pedido.Eventos};nome_evento={pedido.NomeEvento};planos={pedido.Planos};data_pedido={pedido.DataPedido};preco_total={pedido.PrecoTotal};id_pedido={pedido.Id};status={pedido.Status}";
+            return $"cliente_nome={cliente.Nome};cliente_endereco={cliente.Endereco};cliente_telefone={cliente.Telefone};cliente_email={cliente.Email};eventos={pedido.Eventos};nome_evento={pedido.NomeEvento};planos={pedido.Planos};data_pedido={pedido.DataPedido};dataevento={pedido.DataEvento};preco_total={pedido.PrecoTotal};id_pedido={pedido.Id};status={pedido.Status}";
         }
     }
 }

@@ -85,12 +85,12 @@ namespace RoletopMVC.Controllers
             Evento evento = new Evento(nomeEvento, eventoRepository.GetPrecoDe(nomeEvento));
 
             var emailCliente = GetUsuarioSession();
-
+            
             Cliente cliente = clienteRepository.GetPor(emailCliente);
 
             Pedido pedido = new Pedido(
             
-            cliente,form["nome_evento"],cliente.Email=form["email"],form["eventos"],form["planos"],cliente.Telefone=form["telefone"]
+            cliente,form["nome_evento"],cliente.Email=form["email"],form["eventos"],form["planos"], DateTime.Parse(form["dataevento"])
             );
 
             pedido.Cliente = cliente;

@@ -7,13 +7,13 @@
         <div>
             <label for="nome_evento">Nome do Evento</label>
             <br />
-            <input id="nome_evento" type="text" maxlength="20" minlength="3" name="nome_evento" />
+            <input id="nome_evento" type="text" maxlength="20" minlength="3" name="nome_evento" required />
         </div>
 
         <div>
             <label for="email">E-mail</label>
             <br />
-            <input id="email" type="email" value="@Model.Cliente.Email" name="email" />
+            <input id="email" type="email" value="@Model.Cliente.Email" name="email" required />
         </div>
 
         <div>
@@ -46,12 +46,16 @@
             </div>
         </div>
 
-        <div>
-            <label for="telefone">Telefone</label>
-            <br />
-            <input id="telefone" type="text" value="@Model.Cliente.Telefone" name="telefone" />
-            
-            <input class="center" type="submit" value="Confirmar Evento">
-        </form>
+        <div class="dataevento">
+            <label for="dataevento">Data do Evento</label>
+            <br/>
+            <input type="date" id="dataevento" name="dataevento" required>
         </div>
+
+        <div>
+            <input class="center" type="submit" value="Confirmar Evento">
+        </div>
+        </form>
+
+        
 </main>

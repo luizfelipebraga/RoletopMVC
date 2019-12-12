@@ -65,7 +65,7 @@ namespace RoletopMVC.Controllers
                         }
                     }else
                     {
-                        return View("Erro", new RespostaViewModel("Senha incorreta"));
+                        return View("Erro", new RespostaViewModel("Senha incorreta"){NomeView="Erro",UsuarioEmail=GetUsuarioSession(),UsuarioNome=GetUsuarioNomeSession()});
                     }   
                 }else
                 {

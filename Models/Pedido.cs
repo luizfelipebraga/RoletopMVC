@@ -20,20 +20,21 @@ namespace RoletopMVC.Models
         public string Telefone{get;set;}
 
         public string Planos{get;set;}
+        public DateTime DataEvento{get;set;}
 
         public DateTime DataPedido{get;set;}
 
         public double PrecoTotal {get;set;}
         public uint Status {get;set;}
 
-        public Pedido(Cliente cliente,string nome_evento,string email,string eventos,string produtos,string telefone )
+        public Pedido(Cliente cliente,string nome_evento,string email,string eventos,string produtos, DateTime dataevento )
         {
             this.Cliente = cliente;
             this.NomeEvento = nome_evento;
             this.Email = email;
             this.Eventos = eventos;
+            this.DataEvento = dataevento;
             this.Planos = produtos;
-            this.Telefone = telefone;
             this.DataPedido = DateTime.Now;
             
 

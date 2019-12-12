@@ -23,6 +23,7 @@
                     <th>Nome do Evento   </th>
                     <th>Tipo de Evento </th>
                     <th>Planos  </th>
+                    <th>Data do Evento</th>
                     <th>Situação </th>
                     <th>PrecoTotal </th>
                 </tr>
@@ -41,6 +42,7 @@
                         <td>@pedido.NomeEvento</td>
                         <td>@pedido.Eventos</td>
                         <td>@pedido.Planos</td>
+                        <td>@pedido.DataEvento.ToLongDateString()</td>
 
                         @{
                             switch (pedido.Status)

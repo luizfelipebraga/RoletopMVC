@@ -29,7 +29,7 @@ namespace RoletopMVC.Controllers
 
                     clienteRepository.Inserir(cliente);
                     
-                    return View("Sucesso", new RespostaViewModel($"Cadastro efetuado com sucesso, faça o seu login!"){NomeView="Sucesso",UsuarioEmail=GetUsuarioSession(),UsuarioNome=GetUsuarioNomeSession()});
+                    return RedirectToAction("Index", "Cliente");;
                 }
 
                 catch(Exception e)

@@ -11,7 +11,7 @@
     
  }
  body{
-   background-color: #6d086d;
+   background-color: #630874;
  }
  
    #Logo > img{
@@ -170,6 +170,11 @@ table{
     
   
 }
+
+.dataevento{
+  width: 25%;
+}
+
 form * {
   margin: 10px 0;
   text-align: left;
