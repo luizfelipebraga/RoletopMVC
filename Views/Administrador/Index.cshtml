@@ -26,7 +26,9 @@
             <table>
                 <thead>
                     <tr>
+                        <th rowspan="2">ID</th>
                         <th rowspan="2">Nome do Evento</th>
+                        <th rowspan="2">Email do Cliente</th>
                         <th rowspan="2">Tipo de Evento</th>
                         <th rowspan="2">Planos</th>
                         <th rowspan="2">Data do Evento</th>
@@ -42,7 +44,7 @@
                 </thead>
                 <tfoot>
                     <tr>
-                        <td colspan="8">
+                        <td colspan="10">
                             <p>Pedidos atualizados em @DateTime.Now</p>
                         </td>
                     </tr>
@@ -51,7 +53,9 @@
                     @foreach(var pedido in Model.Pedidos )
                     {
                         <tr>
+                            <td>#@pedido.Id</td>
                             <td>@pedido.NomeEvento</td>
+                            <td>@pedido.Cliente.Email</td>
                             <td>@pedido.Eventos</td>
                             <td>@pedido.Planos</td>
                             <td>@pedido.DataEvento.ToLongDateString()</td>

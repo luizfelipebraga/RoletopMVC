@@ -30,61 +30,63 @@
 
 
     }
-    
 
+    
+    
     nav {
       background-color:#FFC600 ;
       position: fixed;
       width: 100%;
-  }
-  
+    }
+    
   nav ul li:nth-child(2){
-      padding-left: 1em;  
+    padding-left: 1em;  
   }
   
   
   nav ul{
-      display:flex;
+    display:flex;
       list-style-type: none;
       align-items: center;
       font-size: 1.5em;
       height: 4em;
       
+      
+      
+    }
+    nav a{
+      color: #7D0093;
+      text-decoration: none;
     
       
-  }
-  nav a{
-    color: #7D0093;
-    text-decoration: none;
-    
-
     }
-
-  nav a:hover{
-    color: #7D0093;
-   
-
-  }
-  
-  nav li {
+    
+    nav a:hover{
+      color: #7D0093;
+      
+      
+    }
+    
+    nav li {
       text-decoration: none;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       padding: .60em 1em;
       justify-content: space-between;
       color: #7D0093;
-  
-  }
-
-  nav  li:hover:first-child {
+      
+    }
+    
+    nav  li:hover:first-child {
       border-bottom: 0px solid purple;
-  }
-
+    }
+    
   nav  li:hover{
     border-bottom: 3px solid #7D0093;
   }
+  
 
   footer{
-  
+    
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #FFC600;
     font-size: 1.5em;

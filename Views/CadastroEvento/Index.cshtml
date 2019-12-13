@@ -4,20 +4,24 @@
     <div class="espaco"></div>
     <h2>Cadastro do Evento</h2>
     <form id="box-CaixaEvento" method="POST" action='@Url.Action("Registrar", "CadastroEvento")'>
-        <div>
+    <div>
             <label for="nome_evento">Nome do Evento</label>
-            <br />
+            <div class="campo">
+                <div>
             <input id="nome_evento" type="text" maxlength="20" minlength="3" name="nome_evento" required />
         </div>
+    </div>
 
-        <div>
-            <label for="email">E-mail</label>
-            <br />
-            <input id="email" type="email" value="@Model.Cliente.Email" name="email" required />
-        </div>
+    <div>
+        <label for="email">E-mail</label>
+            <div class="campo">
+                <div>
+                <input id="email" type="email" value="@Model.Cliente.Email" name="email" required />
+            </div>
+    </div>
 
-        <div>
-            <label for="eventos">Tipo de Evento</label>
+    <div>
+        <label for="eventos">Tipo de Evento</label>
             <div class="field">
                 <div>
                     <select id="eventos" name="eventos" required>

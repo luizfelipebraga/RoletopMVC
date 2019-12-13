@@ -40,7 +40,8 @@ nav {
 }
   
   
-  
+
+
 nav ul{
   overflow: hidden;
   display:flex;
@@ -79,6 +80,9 @@ main {
 #painel {
   display: flex;
   justify-content: space-between;
+  justify-content: space-evenly;
+  padding: 0 50px;
+  height: 7.5em;
 }
 
 h2 {

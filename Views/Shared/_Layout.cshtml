@@ -59,23 +59,25 @@
         <div id= "navweb">
                         
                         <ul>
-                                <li id="Logo" asp-controller="Home" asp-action="index"><img  src="~/img/logo roletop.png" alt="roletop"></li>
+                                <a id="Logo" asp-controller="Home" asp-action="index"><img  src="~/img/logo roletop.png" alt="roletop"></a>
                                 <li><a asp-controller="Home" asp-action="index">Home</a></li>
                                 <li><a asp-controller="Galeria" asp-action="index">Galeria de fotos</a></li>
-                                <li><a asp-controller="CadastroCliente" asp-action="index">Cadastro do Cliente</a></li>
+                                <li><a asp-controller="CadastroCliente" asp-action="index">Cadastro</a></li>
                                 @if(string.IsNullOrEmpty(@Model.UsuarioEmail))
                                 {
-                                <li><a asp-controller="Cliente"asp-action="index">Login do Cliente</a></li>
+                                <li><a asp-controller="Cliente"asp-action="index">Login</a></li>
                                 }
 
                                 else
                                 {
                                         <li><a asp-controller="Cliente"asp-action="Logoff">Logoff</a></li>
-                                        <li><a asp-controller="Cliente"asp-action="Historico">Pedidos</a></li>
+                                        <li><a asp-controller="Cliente"asp-action="Historico">Historico de Pedidos</a></li>
+                                        <li><a asp-controller="CadastroEvento" asp-action="index">Cadastro Evento</a></li>
                                 }
 
-                                <li><a asp-controller="CadastroEvento" asp-action="index">Cadastro do Evento</a></li>
+                                
                                 <li><a asp-controller="Contato" asp-action="index">Contato</a></li>
+                </div>
                         </ul>    
         </div>
                 <div id="navmobile">

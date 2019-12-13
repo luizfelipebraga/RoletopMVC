@@ -50,7 +50,7 @@ namespace RoletopMVC.Controllers
 
                             // * action = "Historico" ; ControllerName = "Cliente" ;  RedirectAction("Historico", "Cliente");
                         
-                        return RedirectToAction("Historico", "Cliente");
+                        return RedirectToAction("index", "CadastroEvento");
                         
                         default:
 

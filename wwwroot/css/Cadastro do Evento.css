@@ -99,6 +99,8 @@ table{
     
   }
   
+  
+
   tbody{
     font-size: 1em;
     letter-spacing: 1px; 
@@ -166,9 +168,6 @@ table{
     width: 100%;
     align-self:center;
     margin: 0 auto;
-    padding-bottom: 0.5em;
-    
-  
 }
 
 .dataevento{
@@ -176,18 +175,14 @@ table{
 }
 
 form * {
-  margin: 10px 0;
+  margin: 9px 0;
   text-align: left;
   overflow: hidden;
-  
-  
 }
 #box-CaixaEvento {
  margin: 0 auto;
  width: 75;
  padding: 3% 30%;
- padding-top: 5em;
- 
 }
 
 #box-calendario{
@@ -327,6 +322,18 @@ form input[type="submit"]:hover {
     display: flex;
     flex-direction: column;
     align-content: space-between;
+}
+
+.campo{
+  width: 100%;
+  display: flex;
+}
+
+.campo > div{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 }
 
 
